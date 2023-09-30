@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@mixin align-center{
+display: flex;
+justify-content: center;
+align-content: center;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4em;
+    color: burlywood;
+}
+.sisam-wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+}
+.intro-screen{
+    height: 100vh;
+    background-color: rgb(142, 157, 204);
+    @include align-center;
+}
+.outro-screen{
+    height: 100vh;
+    background-color: rgb(157, 249, 232);
+    @include align-center;   
+}
+.sisam-group{
+    position: relative;
+    height: 100vh;
+    transform-style: preserve-3d;
+
+.sisam-layer{
+position: absolute;
+inset: 0;
+@include align-center
+}
+
+.base-layer{
+    transform: translateZ(-300px) scale(2);
+}
+}
+.base-layer{
+    transform: translateZ(-300px) scale(2);
+}
+.mid-layer{
+    transform: translateZ(0px)
+}
+.top-layer{
+    transform: translateZ(-200px) scale(0.3)
+}
+
+#intro{
+    z-index: 0;
+}
+#group1{
+    z-index: -1;
+}
+#group1 > .base-layer{
+    background-color: bisque;
+}
+#group2{
+z-index: 0;
+}
+#group2 > mid-layer{
+    background-color: rgb(201, 248, 185);
+}
+#outro{
+z-index: 0;
+}
